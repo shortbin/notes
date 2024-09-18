@@ -1,0 +1,11 @@
+install debezium postgresql package through confluent-hub (already modified in docker compose) 
+
+
+to connect kafka-connect & postgres,
+pg's write ahead log level should be logical, so change it from replica then restart
+cmds:
+alter system set wal_level = logical;
+select pg_reload_conf();
+
+
+add "plugin.name": "pgoutput", default is "decoderbufs"
