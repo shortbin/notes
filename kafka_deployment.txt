@@ -1,0 +1,15 @@
+Up full-stack.yml
+
+Expose kafka for external hosts,
+set `KAFKA_ADVERTISED_LISTENERS` to the IP of the machine so that kafka is externally accessible. To achieve this you can set `LISTENER_DOCKER_EXTERNAL` to the IP of the machine.
+For example, if the IP of your machine is `50.10.2.3`, follow the sample mapping below:
+
+```
+  kafka1:
+    image: confluentinc/cp-kafka:7.2.1
+    ...
+    environment:
+      ...
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka2:19093,EXTERNAL://50.10.2.3:9093,DOCKER://host.docker.internal:29093
+```
+[from readme.md]
