@@ -1,6 +1,6 @@
 Up full-stack.yml
 
-Expose kafka for external hosts,
+Expose kafka for external hosts, [same with jmx ip:port]
 set `KAFKA_ADVERTISED_LISTENERS` to the IP of the machine so that kafka is externally accessible. To achieve this you can set `LISTENER_DOCKER_EXTERNAL` to the IP of the machine.
 For example, if the IP of your machine is `50.10.2.3`, follow the sample mapping below:
 
